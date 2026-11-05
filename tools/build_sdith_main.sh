@@ -23,7 +23,7 @@
 # and its RUN_KEYGEN/RUN_SIGN/RUN_VERIFY flags renamed to
 # TEST_KEY/TEST_SIGN/TEST_SIGN_OPEN to match FALCON's naming.
 #
-# Run from VLSPQC/:
+# Run from pqhedge/:
 #   tools/build_sdith_main.sh
 set -euo pipefail
 

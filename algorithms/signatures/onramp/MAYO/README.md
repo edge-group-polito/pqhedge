@@ -59,7 +59,7 @@ and `#define MAYO_BUILD_TYPE_OPT` before `mayo.h`'s own
 ### Quick check (whole family, via the repo's Makefile)
 
 ```sh
-cd /home/aledolme/home/CODE/VLSPQC
+cd /home/aledolme/home/CODE/pqhedge
 make test-mayo KATNUM=5       # dynamic .rsp pipeline, all 4 variants
 ```
 

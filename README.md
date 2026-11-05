@@ -1,6 +1,6 @@
-# VLSPQC — post-quantum KAT golden model and bare-metal test suite
+# pqhedge — post-quantum KAT golden model and bare-metal test suite
 
-VLSPQC is the software side of a hardware/software co-design effort on post-quantum cryptography: a collection of reference implementations
+pqhedge is the software side of a hardware/software co-design effort on post-quantum cryptography: a collection of reference implementations
 (portable C, no external libraries), one KAT (Known Answer Test) framework around all of them, and a generator that turns every test into a
 self-contained, no-file-I/O program, which prepares the code for later bare-metal programs. This repository is software-only: nothing here depends on or measures hardware. A single top-level `Makefile` generates deterministic `.rsp` vectors,
 replays them byte for byte, builds the static tests, and runs the host benchmark.
@@ -138,7 +138,7 @@ make distclean               # remove build/, vectors/rsp/, vectors/static/
 | [`results/README.md`](results/README.md), [`results/validation.md`](results/validation.md) | measured data and the record of every validation command |
 
 ```
-VLSPQC/
+pqhedge/
 ├── Makefile
 ├── algorithms/        kem/  signatures/{standard,onramp,stateful}/  symmetric/  legacy/
 ├── harness/           kat_parser.*  gen/ (PQCgenKAT_*.c generators, main_*.c runners, rng.c)

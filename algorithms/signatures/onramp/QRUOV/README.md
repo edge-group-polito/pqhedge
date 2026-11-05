@@ -95,7 +95,7 @@ printfs with zero OpenSSL dependency, untouched.
 ### Quick check (whole family, via the repo's Makefile)
 
 ```sh
-cd /home/aledolme/home/CODE/VLSPQC
+cd /home/aledolme/home/CODE/pqhedge
 make test-qruov KATNUM=2      # dynamic .rsp pipeline, all 24 variants (~2-3 min)
 ```
 

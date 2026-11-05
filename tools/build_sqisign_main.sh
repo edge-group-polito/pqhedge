@@ -18,7 +18,7 @@
 # split); unlike MAYO, SQIsign's api.h uses `unsigned long long` for
 # smlen/mlen (matching HAWK), so no smlen/mlen1 type rewrite is needed here.
 #
-# Run from VLSPQC/:
+# Run from pqhedge/:
 #   tools/build_sqisign_main.sh
 set -euo pipefail
 

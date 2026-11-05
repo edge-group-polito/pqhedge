@@ -55,7 +55,7 @@ Nothing else in pqov touched OpenSSL. No other cryptographic primitive
 ### Quick check (whole family, via the repo's Makefile)
 
 ```sh
-cd /home/aledolme/home/CODE/VLSPQC
+cd /home/aledolme/home/CODE/pqhedge
 make test-uov KATNUM=5        # dynamic .rsp pipeline, all 12 variants
 ```
 

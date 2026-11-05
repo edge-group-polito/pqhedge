@@ -45,7 +45,7 @@
 # Reference_Implementation/ (see algorithms/signatures/onramp/README.md, "MQOM",
 # provenance); the script aborts on the empty-file check below otherwise.
 #
-# Usage (from VLSPQC/):
+# Usage (from pqhedge/):
 #   tools/assemble_mqom.sh /path/to/submission_package_v3/Reference_Implementation
 #   tools/build_mqom_main.sh        # (re)generate each variant's main.c + test vectors
 set -euo pipefail
@@ -133,7 +133,7 @@ cat > "$COMMON_DIR/include/mqom3_build_config.h" <<'EOF'
 #ifndef __MQOM3_BUILD_CONFIG_H__
 #define __MQOM3_BUILD_CONFIG_H__
 
-/* Added by the VLSPQC port (not part of upstream MQOM3).
+/* Added by the pqhedge port (not part of upstream MQOM3).
  *
  * Upstream selects the variant and its build options with -D flags passed by
  * its Makefile. They are hardcoded here (each define is #ifndef-guarded, so an

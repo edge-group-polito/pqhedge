@@ -76,7 +76,7 @@ this port can shrink away.
 ### Quick check (whole family, via the repo's Makefile)
 
 ```sh
-cd /home/aledolme/home/CODE/VLSPQC
+cd /home/aledolme/home/CODE/pqhedge
 make test-snova KATNUM=5      # dynamic .rsp pipeline, all 36 variants (~2 min)
 ```
 

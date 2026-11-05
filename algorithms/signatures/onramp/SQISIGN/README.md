@@ -113,7 +113,7 @@ tester agree), exactly like every other family in this repo.
 ### Quick check (whole family, via the repo's Makefile)
 
 ```sh
-cd /home/aledolme/home/CODE/VLSPQC
+cd /home/aledolme/home/CODE/pqhedge
 make test-sqisign KATNUM=5      # dynamic .rsp pipeline, all 3 variants
 ```
 

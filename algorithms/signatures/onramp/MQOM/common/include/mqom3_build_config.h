@@ -1,7 +1,7 @@
 #ifndef __MQOM3_BUILD_CONFIG_H__
 #define __MQOM3_BUILD_CONFIG_H__
 
-/* Added by the VLSPQC port (not part of upstream MQOM3).
+/* Added by the pqhedge port (not part of upstream MQOM3).
  *
  * Upstream selects the variant and its build options with -D flags passed by
  * its Makefile. They are hardcoded here (each define is #ifndef-guarded, so an
