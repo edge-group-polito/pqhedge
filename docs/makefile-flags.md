@@ -1,4 +1,4 @@
-# Makefile flags and targets
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Makefile flags and targets
 
 All flags can be set on the command line and override the defaults. `make help` prints a target summary; the category READMEs under
 [`../algorithms/`](../algorithms/README.md) list every per-family and per-variant target name.

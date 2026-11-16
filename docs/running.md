@@ -1,4 +1,4 @@
-# Running things
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Running things
 
 All commands run from the repository root. Requirements: `gcc`, `make`, `python3` (benchmark and report scripts only). Nothing else.
 

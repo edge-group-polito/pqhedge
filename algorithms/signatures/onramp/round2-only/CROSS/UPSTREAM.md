@@ -1,4 +1,4 @@
-# CROSS — upstream provenance and license
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> CROSS — upstream provenance and license
 
 | Item | Value |
 |---|---|

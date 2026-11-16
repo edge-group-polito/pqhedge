@@ -1,4 +1,4 @@
-# Validation record — FIPS migration and repository restructure
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon-dark.svg"><img src="../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Validation record — FIPS migration and repository restructure
 
 Every line below is the outcome of a command run on 2026-10-20 on the benchmark host (Intel Core Ultra 7 155H, WSL2, gcc 13.3, plain `gcc`, no `-march`),
 with the log kept under `bench/results_fips_20261020/logs/` (git-ignored; copy them out if you need them). "0 failures" means every

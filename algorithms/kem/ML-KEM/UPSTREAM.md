@@ -1,4 +1,4 @@
-# ML-KEM (FIPS 203) — upstream provenance
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> ML-KEM (FIPS 203) — upstream provenance
 
 | Item | Value |
 |---|---|

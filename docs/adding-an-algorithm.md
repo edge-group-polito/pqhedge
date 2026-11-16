@@ -1,4 +1,4 @@
-# Adding an algorithm, a variant or a family
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Adding an algorithm, a variant or a family
 
 A checklist distilled from the FIPS migration (ML-KEM, ML-DSA, SLH-DSA, FN-DSA) and the earlier on-ramp ports. Layout and
 vocabulary: [`../algorithms/README.md`](../algorithms/README.md); harness: [`../harness/README.md`](../harness/README.md).

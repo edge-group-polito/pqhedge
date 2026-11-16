@@ -1,4 +1,4 @@
-# KAT generation, `.rsp` storage and static tests
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> KAT generation, `.rsp` storage and static tests
 
 This document describes how Known Answer Test vectors are produced and consumed. The `make` targets that drive it are listed
 in the [root README](../README.md); the code lives in [`../harness/`](../harness/README.md) (generators, runners, parser) and

@@ -1,4 +1,4 @@
-# Changelog — FIPS migration (what changed against the tag `pre-fips-migration`, and why)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Changelog — FIPS migration (what changed against the tag `pre-fips-migration`, and why)
 
 A review pointed out that the repository labelled round-3 Kyber, Dilithium and SPHINCS+ code as ML-KEM, ML-DSA and SLH-DSA. Those are **not** byte-compatible with FIPS 203 / 204 / 205
 (different hashing and domain separation, no context string), so their KATs were not FIPS KATs. What was done:

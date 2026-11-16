@@ -1,4 +1,4 @@
-# FN-DSA experimental (c-fn-dsa) — upstream provenance
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> FN-DSA experimental (c-fn-dsa) — upstream provenance
 
 **EXPERIMENTAL, PRE-STANDARD. Not in `test-all`.** This is Thomas Pornin's *best guess* of the upcoming
 FN-DSA (FIPS 206); the upstream README states that no FN-DSA draft had been published when it was written
