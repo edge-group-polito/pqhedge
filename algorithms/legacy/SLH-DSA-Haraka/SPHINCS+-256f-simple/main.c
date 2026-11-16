@@ -2,7 +2,7 @@
 //                                                                                   //
 // Auth: Alessandra Dolmeta, Valeria Piscopo                                         //
 // @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  //
-// Date: July 2026                                                                   //
+// Date: November 2026                                                               //
 // Desc: SPHINCS+-256f-simple KAT test entry point                                   //
 //                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////

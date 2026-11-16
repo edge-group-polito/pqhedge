@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
 // Auth: Alessandra Dolmeta, Valeria Piscopo - Politecnico di Torino
-// Date: June 2025
+// Date: November 2026
 // Desc: Test vectors generated with PQCgenKAT_sign.c for hawk-256
 //       HAWK Reference Implementation: https://hawk-sign.info
 //

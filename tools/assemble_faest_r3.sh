@@ -3,7 +3,7 @@
 ##                                                                                   ##
 ## Auth: Alessandra Dolmeta                                                          ##
 ## @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  ##
-## Date: October 2026                                                                ##
+## Date: November 2026                                                               ##
 ## Desc: Assembles the FAEST v3 (NIST round 3) lambda=128 source tree               ##
 ##                                                                                   ##
 #######################################################################################

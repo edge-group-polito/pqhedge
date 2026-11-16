@@ -1,7 +1,7 @@
 /*
  * PQCgenKAT_kem_hqc2025.c
  *
- * KAT generator for HQC-2025.
+ * KAT generator for HQC.
  * Uses the standard 3-arg NIST KEM API:
  *   crypto_kem_keypair(pk, sk)
  *   crypto_kem_enc(ct, ss, pk)
@@ -60,7 +60,7 @@ int main(void)
         randombytes_init(entropy_input, NULL, 256);
         randombytes(seed, 48);
 
-        /* Seed HQC-2025's SHAKE-256 PRNG with that seed */
+        /* Seed HQC's SHAKE-256 PRNG with that seed */
         prng_init(seed, NULL, 48, 0);
 
         ret = crypto_kem_keypair(pk, sk);

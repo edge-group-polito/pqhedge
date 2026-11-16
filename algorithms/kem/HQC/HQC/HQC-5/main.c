@@ -2,8 +2,8 @@
 //                                                                                   //
 // Auth: Alessandra Dolmeta, Valeria Piscopo                                         //
 // @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  //
-// Date: July 2026                                                                   //
-// Desc: HQC-3 KAT test entry point                                                  //
+// Date: November 2026                                                               //
+// Desc: HQC-5 KAT test entry point                                                  //
 //                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -13,12 +13,18 @@
 #include <string.h>
 #include "api.h"
 #include "symmetric.h"
-#include "test_vectors_3.h"
+#include "test_vectors_5.h"
 
 
+<<<<<<< HEAD
 #define TEST_KEY        1
-#define TEST_ENC        1
+#define TEST_ENC        0
+#define TEST_DEC        0
+=======
+#define TEST_KEY        0
+#define TEST_ENC        0
 #define TEST_DEC        1
+>>>>>>> db375a00916d3b5adb23d644dffbe8365fac1ec0
 
 
 

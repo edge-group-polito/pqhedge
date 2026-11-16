@@ -2,7 +2,7 @@
 ##                                                                                   ##
 ## Auth: Alessandra Dolmeta, Valeria Piscopo                                         ##
 ## @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  ##
-## Date: July 2026                                                                   ##
+## Date: November 2026                                                               ##
 ## Desc: Top-level build system for the PQC KAT test suite                           ##
 ##                                                                                   ##
 #######################################################################################
@@ -128,7 +128,7 @@ DIRS := $(BUILD) \
         $(RSPDIR)/signatures/stateful/LMS \
         $(RSPDIR)/signatures/stateful/HSS \
         $(RSPDIR)/kem/ML-KEM \
-        $(RSPDIR)/kem/HQC/HQC-2025 \
+        $(RSPDIR)/kem/HQC/HQC \
         $(RSPDIR)/symmetric/ASCON
 
 $(DIRS):
@@ -1940,8 +1940,8 @@ gen-mlkem:  $(addprefix gen-,$(MLKEM_VARIANTS))
 .PHONY: test-mlkem gen-mlkem
 
 # =============================================================================
-#  HQC  (HQC-2025 only, 3 variants)
-#  HQC-2025 uses the standard 3-arg NIST KEM API and seeds randomness via
+#  HQC  (HQC only, 3 variants)
+#  HQC uses the standard 3-arg NIST KEM API and seeds randomness via
 #  prng_init()/prng_get_bytes() internally — no explicit seed parameters.
 #  Macro: $(1)=safe-name $(2)=variant-dir $(3)=version $(4)=rsp-version-dir
 # =============================================================================
@@ -1956,7 +1956,7 @@ $(BUILD)/gen_$(1): $$($(1)_SRCS) $(GENDIR)/rng.c \
     $(GENDIR)/PQCgenKAT_kem_hqc2025.c $(COMMON)/kat_parser.c \
     | $(BUILD) $(RSPDIR)/kem/HQC/$(4)
 	$(CC) $(CFLAGS) $$($(1)_INC) $(GEN_FLAGS) \
-	    -DRSP_PATH='"$$($(1)_RSP)"' -DALGO_NAME='"HQC-$(3)/$(2)"' \
+	    -DRSP_PATH='"$$($(1)_RSP)"' -DALGO_NAME='"HQC/$(2)"' \
 	    $$^ -o $$@
 
 $$($(1)_RSP): $(BUILD)/gen_$(1) | $(RSPDIR)/kem/HQC/$(4)
@@ -1976,10 +1976,10 @@ test-$(1): $$($(1)_RSP) $(BUILD)/test_$(1)
 .PHONY: gen-$(1) test-$(1)
 endef
 
-# HQC-2025: standard 3-arg NIST API with internal SHAKE-256 PRNG
-$(eval $(call HQC2025_RULES,HQC2025_1,HQC-1,HQC-2025,HQC-2025))
-$(eval $(call HQC2025_RULES,HQC2025_3,HQC-3,HQC-2025,HQC-2025))
-$(eval $(call HQC2025_RULES,HQC2025_5,HQC-5,HQC-2025,HQC-2025))
+# HQC: standard 3-arg NIST API with internal SHAKE-256 PRNG
+$(eval $(call HQC2025_RULES,HQC2025_1,HQC-1,HQC,HQC))
+$(eval $(call HQC2025_RULES,HQC2025_3,HQC-3,HQC,HQC))
+$(eval $(call HQC2025_RULES,HQC2025_5,HQC-5,HQC,HQC))
 
 HQC_SAFE_NAMES := HQC2025_1 HQC2025_3 HQC2025_5
 
@@ -2139,7 +2139,7 @@ all: test-all
 #    static-test-onramp-ds / static-test-stateful-ds / static-test-ascon
 #    for CROSS/HAWK/LESS, XMSS/LMS/HSS, and ASCON respectively.
 #
-#    HAWK and HQC-2025 have no explicit-randomness API and replay
+#    HAWK and HQC have no explicit-randomness API and replay
 #    determinism by reseeding their internal DRBG/PRNG; with RUN_KEYGEN=0
 #    the reseeded stream desyncs and sign/encaps will report mismatches
 #    even though the underlying algorithm is correct -- see tools/README.md.

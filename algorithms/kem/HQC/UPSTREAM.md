@@ -14,7 +14,7 @@ these KATs may not match the final standard.
 | Import / verification date | 2026-10-20 (the code was already in the repository; provenance first recorded here) |
 | Implementation | `ref` (portable C) only; the upstream `x86_64/avx256` code is not used |
 | License | public domain dedication (upstream `LICENSE`, copied here as `LICENSE`; also covers the PQClean-derived FIPS 202 code) |
-| Variants | `HQC-2025/HQC-1`, `HQC-3`, `HQC-5` (security levels 1, 3, 5) |
+| Variants | `HQC/HQC-1`, `HQC-3`, `HQC-5` (security levels 1, 3, 5) |
 
 ## Newer upstream work not imported
 `main` stops at v5.0.0. The `next-release` branch holds later, unreleased commits (e.g. `6fd7ec3`

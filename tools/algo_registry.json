@@ -39,7 +39,7 @@
     },
     "kem_prng_reseed": {
       "type": "KEM",
-      "description": "No explicit seed params. Reseed via prng_init(seed,NULL,48,0) then keypair(pk,sk)/enc(ct,ss,pk)/dec(ss,ct,sk). Used by HQC-2025. Same RUN_KEYGEN=0 desync caveat as ds_drbg_hawk."
+      "description": "No explicit seed params. Reseed via prng_init(seed,NULL,48,0) then keypair(pk,sk)/enc(ct,ss,pk)/dec(ss,ct,sk). Used by HQC. Same RUN_KEYGEN=0 desync caveat as ds_drbg_hawk."
     },
     "aead_direct": {
       "type": "AEAD",
@@ -2968,9 +2968,9 @@
     "HQC2025_1": {
       "family": "hqc2025",
       "shape": "kem_prng_reseed",
-      "src_dir": "algorithms/kem/HQC/HQC-2025/HQC-1/src",
-      "include_dir": "algorithms/kem/HQC/HQC-2025/HQC-1/include",
-      "rsp_path": "vectors/rsp/kem/HQC/HQC-2025/HQC-1.rsp",
+      "src_dir": "algorithms/kem/HQC/HQC/HQC-1/src",
+      "include_dir": "algorithms/kem/HQC/HQC/HQC-1/include",
+      "rsp_path": "vectors/rsp/kem/HQC/HQC/HQC-1.rsp",
       "gen_target": "gen-HQC2025_1",
       "vec_suffix": "1",
       "main_headers": [
@@ -2981,9 +2981,9 @@
     "HQC2025_3": {
       "family": "hqc2025",
       "shape": "kem_prng_reseed",
-      "src_dir": "algorithms/kem/HQC/HQC-2025/HQC-3/src",
-      "include_dir": "algorithms/kem/HQC/HQC-2025/HQC-3/include",
-      "rsp_path": "vectors/rsp/kem/HQC/HQC-2025/HQC-3.rsp",
+      "src_dir": "algorithms/kem/HQC/HQC/HQC-3/src",
+      "include_dir": "algorithms/kem/HQC/HQC/HQC-3/include",
+      "rsp_path": "vectors/rsp/kem/HQC/HQC/HQC-3.rsp",
       "gen_target": "gen-HQC2025_3",
       "vec_suffix": "3",
       "main_headers": [
@@ -2994,9 +2994,9 @@
     "HQC2025_5": {
       "family": "hqc2025",
       "shape": "kem_prng_reseed",
-      "src_dir": "algorithms/kem/HQC/HQC-2025/HQC-5/src",
-      "include_dir": "algorithms/kem/HQC/HQC-2025/HQC-5/include",
-      "rsp_path": "vectors/rsp/kem/HQC/HQC-2025/HQC-5.rsp",
+      "src_dir": "algorithms/kem/HQC/HQC/HQC-5/src",
+      "include_dir": "algorithms/kem/HQC/HQC/HQC-5/include",
+      "rsp_path": "vectors/rsp/kem/HQC/HQC/HQC-5.rsp",
       "gen_target": "gen-HQC2025_5",
       "vec_suffix": "5",
       "main_headers": [

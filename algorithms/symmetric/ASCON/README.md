@@ -12,7 +12,7 @@ message, hash/XOF variants are a single `crypto_hash()` call. There is no
 derand/coins indirection either — `crypto_aead_encrypt`/`crypto_aead_decrypt`
 take key/nonce/associated-data/plaintext directly and are deterministic by
 construction, so KAT generation needs no reseed/replay tricks (unlike CROSS,
-LESS, HAWK, or HQC-2025).
+LESS, HAWK, or HQC).
 
 ## Variants
 

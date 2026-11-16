@@ -2,8 +2,8 @@
 //                                                                                   //
 // Auth: Alessandra Dolmeta, Valeria Piscopo                                         //
 // @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  //
-// Date: July 2026                                                                   //
-// Desc: HQC-1 KAT test entry point                                                  //
+// Date: November 2026                                                               //
+// Desc: HQC-3 KAT test entry point                                                  //
 //                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -13,7 +13,7 @@
 #include <string.h>
 #include "api.h"
 #include "symmetric.h"
-#include "test_vectors_1.h"
+#include "test_vectors_3.h"
 
 
 #define TEST_KEY        1
@@ -119,7 +119,7 @@ int main(void)
             printVect("ss", ss, CRYPTO_BYTES);
             printVect("ss1", ss1, CRYPTO_BYTES);
             printf("\n");
-    #endif
+    #endif 
 
 
     printf("Test Successful\n");

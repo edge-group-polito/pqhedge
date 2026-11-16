@@ -1,7 +1,7 @@
 /*
  * main_hqc2025.c
  *
- * KAT test runner for HQC-2025.
+ * KAT test runner for HQC.
  * Uses the standard 3-arg NIST KEM API:
  *   crypto_kem_keypair(pk, sk)
  *   crypto_kem_enc(ct, ss, pk)
@@ -79,7 +79,7 @@ int main(void)
     int pass_dec = 0, fail_dec = 0;
     int count = 0, ret;
 
-    printf("[HQC-2025] Opening .rsp: %s\n", RSP_PATH);
+    printf("[HQC] Opening .rsp: %s\n", RSP_PATH);
     if (kat_parser_open(&parser, RSP_PATH) != 0) return 1;
 
     printf("Testing: ");
@@ -105,7 +105,7 @@ int main(void)
         if (kat_get_bytes(&entry, "ct",   ct_rsp,  CRYPTO_CIPHERTEXTBYTES)    != 0) goto next;
         if (kat_get_bytes(&entry, "ss",   ss_rsp,  CRYPTO_BYTES)              != 0) goto next;
 
-        /* Re-seed HQC-2025's SHAKE-256 PRNG with the stored seed */
+        /* Re-seed HQC's SHAKE-256 PRNG with the stored seed */
         prng_init(seed, NULL, 48, 0);
 
 #if RUN_KEYGEN
@@ -161,7 +161,7 @@ next:
     }
 
     kat_parser_close(&parser);
-    printf("\n=== Results for HQC-2025 ===\n");
+    printf("\n=== Results for HQC ===\n");
 #if RUN_KEYGEN
     printf("  Keygen : %d pass, %d fail\n", pass_key, fail_key);
 #endif

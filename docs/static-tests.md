@@ -126,7 +126,7 @@ vectors/static/ml-kem-512/
 - Disabling a stage doesn't remove its data: e.g. with `RUN_KEYGEN=0` the
   keypair is `memcpy`'d in from the vectors instead of computed, so later
   stages (sign/encaps) still have something to work with — **except for
-  HQC-2025, see the caveat below.**
+  HQC, see the caveat below.**
 - Signature fields that aren't fixed-length across a KAT batch (Falcon's
   compressed `sm`, in practice) get a ragged-safe representation: per-entry
   named arrays + a pointer table, plus a `TVEC_X_LEN[N_KAT]` companion array
@@ -153,7 +153,7 @@ non-derand wrapper functions in `kem.c`/`sign.c` still reference the
 `randombytes()` symbol, so it has to be present. On a bare-metal target
 without `/dev/urandom` you'd swap this file for a stub.)
 
-## The RUN_KEYGEN=0 desync caveat (HQC-2025 only)
+## The RUN_KEYGEN=0 desync caveat (HQC only)
 
 Most families expose an explicit-randomness ("derand") API — the exact
 random bytes consumed during keygen/sign are captured in the `.rsp` and
@@ -174,7 +174,7 @@ consumption; a hand-replicated "throwaway read of N bytes" (viable for
 CROSS/LESS, whose keygen draws a single fixed-size seed) can't be done
 safely there.
 
-**HQC-2025** is the one remaining family without that compensation — its
+**HQC** is the one remaining family without that compensation — its
 dynamic test (`harness/gen/main_hqc2025.c`) does *not* call `crypto_sign_keypair`
 when `RUN_KEYGEN=0`. With `RUN_KEYGEN=0`, the subsequent encaps call starts
 from the wrong PRNG offset and **will report a mismatch even though the
@@ -231,7 +231,7 @@ Non-standardized / separate-category (each with its own aggregate target —
 | `ascon-aead` | `aead_direct` | 3 | ascon128v12, ascon128av12, ascon80pqv12; no keygen, no RUN_KEYGEN |
 | `ascon-hash` | `hash_direct` | 4 | asconhashv12, asconhashav12, asconxofv12, asconxofav12; no RUN_* flags at all |
 
-`make static-test-hqc` covers all 3 HQC-2025 variants at once, matching the
+`make static-test-hqc` covers all 3 HQC variants at once, matching the
 existing `test-hqc` dynamic target's scope (`hqc2025` is currently the only
 HQC family registered). Likewise `make static-test-ascon` covers all 7 ASCON
 variants (`static-test-ascon-aead` + `static-test-ascon-hash`).

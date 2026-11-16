@@ -3,7 +3,7 @@
 ##                                                                                   ##
 ## Auth: Alessandra Dolmeta, Valeria Piscopo                                         ##
 ## @ EDGE group, at VLSI-LAB, Politecnico di Torino                                  ##
-## Date: October 2026                                                                ##
+## Date: November 2026                                                               ##
 ## Desc: Assembles the MQOM3 source tree from the NIST round-3 submission package    ##
 ##                                                                                   ##
 #######################################################################################
