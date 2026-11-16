@@ -104,7 +104,7 @@ rerun** after the restructure (the migration only moved these families and updat
 
 - **What:** 39 variants (FAEST-R3 4, MAYO-R3 2, MQOM 6, QR-UOV-R3 10, SDitH-R3 4, SNOVA-R3 6, SQIsign-R3 1, UOV-R3 6), built from the flattened static-test folders with plain `gcc -O2`, identical flags for
   every variant, portable reference C (no SIMD, no AES-NI), one operation per process, one CPU pinned, 1000-byte message, median wall-clock time over up to 1000 calls within 3 s.
-  Memory: peak heap (`malloc` wrapper), touched stack pages, resident-set growth, code size. Method and caveats: [`bench/README.md`](../../../bench/README.md) (git-ignored directory, kept locally).
+  Memory: peak heap (`malloc` wrapper), touched stack pages, resident-set growth, code size. Method and code: [`tools/bench/`](../../../tools/bench).
 - **When / where:** 2026-10-14, Intel Core Ultra 7 155H under WSL2, gcc 13.3, `make bench-l1`. The table is the **per-metric median of three runs**
   ([`../../../results/benchmark_onramp_l1.csv`](../../../results/benchmark_onramp_l1.csv); per-metric spread in [`benchmark_onramp_l1_spread.csv`](../../../results/benchmark_onramp_l1_spread.csv)).
 - **Caveats:** the machine was not fully idle (mean 10–11 % user CPU from a user-owned editor process during the runs). The timing differs between runs by a median **31 %** (maximum 80 %), so

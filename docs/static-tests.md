@@ -398,4 +398,4 @@ with one common `CFLAGS` set, runs keygen / sign / verify of every variant (one
 operation per process, pinned to one CPU) with `bench.c` + `memtrack.c`, then
 `report.py` writes `bench/results/{results.md,results.csv,*.png}`. `make bench-l1`
 overwrites `bench/results`. `make bench-clean` removes `build/bench`. Methodology
-and regeneration: [`bench/README.md`](../bench/README.md).
+and regeneration: [`tools/bench/`](../tools/bench).

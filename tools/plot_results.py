@@ -4,7 +4,7 @@ plot_results.py -- figures from results/benchmark.csv (written by tools/collect_
 
   docs/figures/time_per_operation.png   median wall time per operation and variant, log scale, grouped by family
   docs/figures/sizes.png                pk / sk / ciphertext-or-signature bytes per variant, one panel per family
-  README.md                             the compact table between the `results:root` markers
+  results/README.md                     the compact table between the `results:root` markers
 
 Three categorical series only (keygen / sign|encaps / verify|decaps and pk / sk / ct|sig), so the first three slots of
 the validated palette are enough; the series also differ in marker shape, so identity never relies on colour alone.
@@ -130,7 +130,7 @@ def size_figure(rows, meta):
 
 
 def update_readme_table(rows, meta):
-    """Write the compact results table between <!-- BEGIN results:root --> / <!-- END results:root --> in README.md."""
+    """Write the compact results table between <!-- BEGIN results:root --> / <!-- END results:root --> in results/README.md."""
     by = OrderedDict()
     for r in rows:
         by.setdefault((r["family"], r["variant"]), {})[r["operation"]] = r
@@ -145,13 +145,13 @@ def update_readme_table(rows, meta):
             lines.append("| %s | %s | %s | %s | %s | %d | %d | %s |" % (
                 var, first["nist_category"], *["%.3f" % x if x < 10 else "%.1f" % x for x in ms],
                 max(int(o["stack_peak_B"]) for o in ops.values()), max(int(o["heap_peak_B"]) for o in ops.values()), first["code_B"]))
-    p = ROOT / "README.md"
+    p = ROOT / "results" / "README.md"
     s = p.read_text()
     b, e = "<!-- BEGIN results:root -->", "<!-- END results:root -->"
     if b in s and e in s:
         i, j = s.index(b) + len(b), s.index(e)
         p.write_text(s[:i] + "\n" + "\n".join(lines) + "\n" + s[j:])
-        print("updated results:root in README.md")
+        print("updated results:root in results/README.md")
 
 
 def main():

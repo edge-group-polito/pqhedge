@@ -28,7 +28,7 @@ REG = ROOT / "tools" / "algo_registry.json"
 # README tables kept up to date by --update-readmes:  <!-- BEGIN sizes:<id> --> ... <!-- END sizes:<id> -->
 # id -> (readme path, list of registry families, level of detail)
 MARKERS = {
-    "root":     ("README.md", ["mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp"], "variants"),
+    "root":     ("results/README.md", ["mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp"], "variants"),
     "kem":      ("algorithms/kem/README.md", ["mlkem", "hqc2025"], "variants"),
     "standard": ("algorithms/signatures/standard/README.md", ["mldsa", "slhdsa", "falcon", "fndsa-exp"], "variants"),
     "legacy":   ("algorithms/legacy/README.md", ["slhdsa-haraka", "slhdsa-haraka-aes"], "variants"),
