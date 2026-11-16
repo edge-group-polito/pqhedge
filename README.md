@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/pqhedge-logo-dark.svg">
+    <img src="docs/images/pqhedge-logo.svg" alt="pqhedge logo" width="400">
+  </picture>
+</p>
+
 # pqhedge — post-quantum KAT golden model and bare-metal test suite
 
 Software side of a hardware/software co-design effort on post-quantum cryptography:
