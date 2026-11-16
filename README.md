@@ -5,7 +5,9 @@
   </picture>
 </p>
 
-# pqhedge — post-quantum KAT golden model and bare-metal test suite
+# pqhedge
+
+**Post-quantum KAT golden model and bare-metal test suite**
 
 Software side of a hardware/software co-design effort on post-quantum cryptography:
 
