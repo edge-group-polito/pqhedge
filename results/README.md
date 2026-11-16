@@ -1,4 +1,4 @@
-# `results/` — measured data, tables and figures
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon-dark.svg"><img src="../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> `results/` — measured data, tables and figures
 
 Everything the top-level README summarizes comes from here. Tables between `<!-- BEGIN … -->` / `<!-- END … -->` markers are
 **generated** (`make results-update`); do not edit them by hand.

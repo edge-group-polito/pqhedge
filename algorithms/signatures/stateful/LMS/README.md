@@ -1,4 +1,4 @@
-# LMS (Leighton-Micali Signatures)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> LMS (Leighton-Micali Signatures)
 
 Vendored from Cisco's [hash-sigs](https://github.com/cisco/hash-sigs)
 reference implementation, with a small pqrv adapter

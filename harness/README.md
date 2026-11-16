@@ -1,4 +1,4 @@
-# `harness/` — KAT parser, generators and test runners
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon-dark.svg"><img src="../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> `harness/` — KAT parser, generators and test runners
 
 The framework code shared by every algorithm family. It never contains algorithm code; each family under
 [`../algorithms/`](../algorithms/README.md) is compiled *together with* the files here.

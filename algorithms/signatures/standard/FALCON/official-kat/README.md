@@ -1,4 +1,4 @@
-# Official Falcon round-3 KAT files
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Official Falcon round-3 KAT files
 
 Verbatim copies of `KAT/falcon512-KAT.rsp` and `KAT/falcon1024-KAT.rsp` from the Falcon round-3 submission package
 (<https://falcon-sign.info/falcon-round3.zip>, package SHA-256 `d625407dbda9e5835f610aaeba1147e029988a6610e0107dfd292033138e1d47`, downloaded 2026-10-20).

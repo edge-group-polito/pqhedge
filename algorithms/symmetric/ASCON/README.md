@@ -1,4 +1,4 @@
-# ASCON
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> ASCON
 
 Reference-implementation sources of **Ascon v1.2** (the Lightweight Cryptography competition submission; variant names end in `v12`).
 Ascon was selected by NIST for lightweight cryptography and standardized in

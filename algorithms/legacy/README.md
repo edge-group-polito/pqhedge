@@ -1,4 +1,4 @@
-# Legacy (pre-standard) code, kept for comparison
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../docs/images/pqhedge-icon-dark.svg"><img src="../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Legacy (pre-standard) code, kept for comparison
 
 Everything here is **not part of any FIPS standard**, is **not in `test-all`**, and (except the Haraka
 families) is **not wired into the Makefile**. It is kept so the pre-FIPS reference code stays available

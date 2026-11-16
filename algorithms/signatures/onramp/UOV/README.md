@@ -1,4 +1,4 @@
-# UOV — ported from [pqov](https://github.com/pqov/pqov)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> UOV — ported from [pqov](https://github.com/pqov/pqov)
 
 Unbalanced Oil and Vinegar, a multivariate signature scheme. 12 variants
 (4 security levels — Ip/Is/III/V — × 3 key formats — classic/pkc/pkc_skc),

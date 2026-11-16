@@ -1,4 +1,4 @@
-# Digital signatures — standard and standard-pending
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Digital signatures — standard and standard-pending
 
 Scope: the signature families of the "standardized" suite. They are compiled with `harness/gen/PQCgenKAT_sign_*.c` (generation) or
 `harness/gen/main_*.c` (testing); see [`../../../docs/kat-format.md`](../../../docs/kat-format.md), [`../../../harness/README.md`](../../../harness/README.md)

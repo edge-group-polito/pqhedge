@@ -1,4 +1,4 @@
-# Symmetric — non-PQC symmetric-key primitives
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../docs/images/pqhedge-icon-dark.svg"><img src="../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Symmetric — non-PQC symmetric-key primitives
 
 Scope: symmetric-key primitives, parallel to [`../kem/`](../kem/README.md) (key encapsulation) and [`../signatures/`](../signatures/standard/README.md) (signatures).
 Nothing here is post-quantum cryptography: the sources are kept because a reference implementation was already available for the hardware/software co-design

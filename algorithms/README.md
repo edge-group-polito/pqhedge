@@ -1,4 +1,4 @@
-# `algorithms/` — reference implementations by standardization status
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon-dark.svg"><img src="../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> `algorithms/` — reference implementations by standardization status
 
 Every family compiled by the Makefile, grouped by what its standard status actually is. Status was checked on NIST's CSRC pages on
 2026-10-20 unless a cell says otherwise; "not verified" means no NIST page was available to confirm it.
