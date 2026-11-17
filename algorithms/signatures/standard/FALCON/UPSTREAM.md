@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Falcon (round 3) — upstream provenance
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Falcon (round 3) — upstream provenance
 
 Label: **Falcon (round 3, basis of the upcoming FN-DSA / FIPS 206)**. This code is *not* FN-DSA:
 FIPS 206 was not a final standard when this was written (status to be re-checked on

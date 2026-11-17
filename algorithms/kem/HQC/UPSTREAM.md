@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> HQC — upstream provenance
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon.svg"><img src="../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> HQC — upstream provenance
 
 Label: **HQC (NIST-selected, FIPS 207 pending — implements spec 2025-08-22)**. HQC was selected by NIST on
 2025-03-11 as a backup KEM to ML-KEM. A draft standard was expected in 2026 and a final one in 2027; the

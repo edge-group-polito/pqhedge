@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> On-ramp — NIST additional digital signature candidates
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon.svg"><img src="../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> On-ramp — NIST additional digital signature candidates
 
 Reference-implementation sources for the signature schemes of NIST's
 [Additional Digital Signature Schemes](https://csrc.nist.gov/projects/pqc-dig-sig) ("on-ramp") process. None of them is a

@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SDitH — ported from the [SDitH reference implementation](https://github.com/sdith/sdith)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SDitH — ported from the [SDitH reference implementation](https://github.com/sdith/sdith)
 
 SDitH (Syndrome Decoding in the Head), an MPC-in-the-Head code-based
 signature. 12 variants: 2 sub-architectures (**Hypercube_Variant**,

@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> What is covered
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon.svg"><img src="images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> What is covered
 
 Every algorithm family in the repository, its standardization status, upstream pin and whether `make test-all` runs it.
 Per-family detail: [`../algorithms/README.md`](../algorithms/README.md).

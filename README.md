@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/pqhedge-logo-dark.svg">
-    <img src="docs/images/pqhedge-logo.svg" alt="pqhedge logo" width="400">
+    <img src="docs/images/pqhedge-logo-light.svg" alt="pqhedge logo" width="400">
   </picture>
 </p>
 

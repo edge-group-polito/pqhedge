@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> XMSS / XMSS^MT
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> XMSS / XMSS^MT
 
 Vendored from the [xmss-reference](https://github.com/XMSS/xmss-reference)
 implementation (non-"fast"/non-BDS core — see below), with a small pqrv

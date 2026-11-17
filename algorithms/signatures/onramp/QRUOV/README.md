@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> QRUOV — ported from [QR-UOV round 2](https://github.com/qruov/round2)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> QRUOV — ported from [QR-UOV round 2](https://github.com/qruov/round2)
 
 QR-UOV, a multivariate signature scheme built as a structured
 (quotient-ring) variant of UOV. 24 variants: 12 official parameter sets

@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SQIsign — ported from [the-sqisign](https://github.com/SQIsign/the-sqisign)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SQIsign — ported from [the-sqisign](https://github.com/SQIsign/the-sqisign)
 
 SQIsign (Short Quaternion and Isogeny Signature), an isogeny-based signature
 over quaternion algebras — a fundamentally different mathematical structure

@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Static KAT test generator
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon.svg"><img src="images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Static KAT test generator
 
 Turns the dynamic KAT tests in this repo (which `fopen()` a `.rsp` file at
 runtime — fine on a host, impossible on bare-metal / FPGA / RISC-V) into a

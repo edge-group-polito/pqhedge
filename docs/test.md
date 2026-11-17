@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon-dark.svg"><img src="images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Test commands — all algorithms
+# <picture><source media="(prefers-color-scheme: dark)" srcset="images/pqhedge-icon.svg"><img src="images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Test commands — all algorithms
 
 
 ## Dynamic (gcc, `.rsp`-based)

@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon-dark.svg"><img src="../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> `tools/` — generators, batch runners, benchmarks and report scripts
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../docs/images/pqhedge-icon.svg"><img src="../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> `tools/` — generators, batch runners, benchmarks and report scripts
 
 Everything here is driven from the repository root (`make …` or `python3 -I tools/<script>`); the long-form
 documentation of the static-test flow lives in [`../docs/static-tests.md`](../docs/static-tests.md).

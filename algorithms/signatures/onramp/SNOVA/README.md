@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SNOVA — ported from the [SNOVA reference implementation](https://github.com/SNOVA-project/SNOVA)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> SNOVA — ported from the [SNOVA reference implementation](https://github.com/SNOVA-project/SNOVA)
 
 SNOVA, a multivariate signature scheme. 36 variants: 18 official parameter
 sets (grouped in 3s per NIST level 1/3/5) × 2 public-key-expansion PRG

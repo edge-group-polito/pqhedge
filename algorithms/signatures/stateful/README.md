@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Stateful hash-based signatures (XMSS, LMS, HSS)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../docs/images/pqhedge-icon.svg"><img src="../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> Stateful hash-based signatures (XMSS, LMS, HSS)
 
 Scope: reference implementations of the **stateful** hash-based signature schemes XMSS / XMSS^MT, LMS and HSS. They are approved in
 NIST [SP 800-208](https://csrc.nist.gov/pubs/sp/800/208/final) (*Recommendation for Stateful Hash-Based Signature Schemes*, **final**,

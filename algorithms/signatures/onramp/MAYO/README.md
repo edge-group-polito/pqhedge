@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon-dark.svg"><img src="../../../../docs/images/pqhedge-icon.svg" alt="pqhedge" height="32" align="absmiddle"></picture> MAYO — ported from [MAYO-C](https://github.com/PQCMayo/MAYO-C)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="../../../../docs/images/pqhedge-icon.svg"><img src="../../../../docs/images/pqhedge-icon-light.svg" alt="pqhedge" height="32" align="absmiddle"></picture> MAYO — ported from [MAYO-C](https://github.com/PQCMayo/MAYO-C)
 
 MAYO, a multivariate signature scheme built as a variant of UOV. 4
 parameter sets (MAYO_1/2/3/5, NIST levels 1/1/3/5), each compile-time-fixed
