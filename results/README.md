@@ -40,6 +40,8 @@ ciphertext (KEM) or `CRYPTO_BYTES` (signature; for Falcon the maximum).
 | HQC2025_5 | 7237 | 7333 | 14421 |
 | fndsa-exp-512 | 897 | 1345 | 666 |
 | fndsa-exp-1024 | 1793 | 2369 | 1280 |
+| falcon-fxp-512 | 897 | 1281 | 754 |
+| falcon-fxp-1024 | 1793 | 2305 | 1464 |
 <!-- END sizes:root -->
 
 ![Public key, secret key and ciphertext / signature sizes per variant](../docs/figures/sizes.png)

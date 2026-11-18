@@ -17,7 +17,7 @@ meant for bare-metal targets ([`static-tests.md`](static-tests.md)).
 | Pattern | Meaning | Example |
 |---|---|---|
 | `test-all` | the 23 standardized / standard-pending variants | `make test-all` |
-| `test-<aggregate>` | a group of families | `test-onramp-ds`, `test-stateful-ds`, `test-ascon`, `test-fndsa-exp` |
+| `test-<aggregate>` | a group of families | `test-onramp-ds`, `test-stateful-ds`, `test-ascon`, `test-fndsa-exp`, `test-falcon-fxp` |
 | `test-<family>` | all variants of one family | `test-mlkem`, `test-mldsa`, `test-slhdsa`, `test-hqc`, `test-falcon` |
 | `test-<variant>` | one parameter set | `test-ml-kem-512`, `test-ML-DSA-44`, `test-SLH-DSA-SHA2-128s`, `test-HQC2025_1` |
 | `gen-…` | generate only (same names) | `gen-mlkem`, `gen-all` |
@@ -52,6 +52,8 @@ make test-onramp-ds KATNUM=10      # on-ramp candidates: very long at the defaul
 make test-stateful-ds              # XMSS, LMS, HSS (default variant each)
 make test-ascon                    # ASCON v1.2 (not PQC)
 make test-fndsa-exp                # experimental FN-DSA
+make test-falcon-fxp               # experimental fixed-point Falcon (falcon-fxp-512, -1024)
+make test-falcon-fxp-512 KATNUM=10 RUN_KEYGEN=0   # one variant, 10 vectors, keygen skipped
 ```
 
 ### Static (no file I/O) tests

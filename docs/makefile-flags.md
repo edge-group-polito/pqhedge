@@ -38,6 +38,7 @@ make test-all CC=arm-linux-gnueabihf-gcc CFLAGS="-O2 -std=c11"
 | `test-all` / `gen-all` / `static-test-all` | the 23 standardized and standard-pending variants (ML-KEM 3, ML-DSA 3, SLH-DSA 12, Falcon 2, HQC 3); `test-all` also runs `test-falcon-512-official` and `test-falcon-1024-official` (the official Falcon round-3 KAT) | — |
 | `test-ds`, `test-kem` | signatures (`mldsa`, `slhdsa`, `falcon`) / KEMs (`mlkem`, `hqc`) of the above | part of it |
 | `test-fndsa-exp` | experimental FN-DSA (2 variants) | no |
+| `test-falcon-fxp` (+ `gen-falcon-fxp`, `static-test-falcon-fxp`) | experimental fixed-point Falcon (2 variants); `FXP_FPR_MODE=2` fixed point (default) or `0` native double | no |
 | `test-onramp-ds` (alias `test-additional-ds`, deprecated) | the on-ramp candidates (232 variants) | no |
 | `test-stateful-ds` | XMSS, LMS, HSS default variants | no |
 | `test-ascon` | ASCON (7 variants, not PQC) | no |

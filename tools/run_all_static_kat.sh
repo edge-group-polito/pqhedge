@@ -95,6 +95,7 @@ declare -A FAMILIES=(
     [falcon]="falcon-512 falcon-1024"
     [slhdsa]="SLH-DSA-SHA2-128s SLH-DSA-SHA2-128f SLH-DSA-SHA2-192s SLH-DSA-SHA2-192f SLH-DSA-SHA2-256s SLH-DSA-SHA2-256f SLH-DSA-SHAKE-128s SLH-DSA-SHAKE-128f SLH-DSA-SHAKE-192s SLH-DSA-SHAKE-192f SLH-DSA-SHAKE-256s SLH-DSA-SHAKE-256f"
     [fndsa-exp]="fndsa-exp-512 fndsa-exp-1024"
+    [falcon-fxp]="falcon-fxp-512 falcon-fxp-1024"
     [slhdsa-haraka]="HARAKAp128fsimple HARAKAp128frobust HARAKAp192fsimple HARAKAp192frobust HARAKAp256fsimple HARAKAp256frobust"
     [slhdsa-haraka-aes]="HARAKAAESp128fsimple HARAKAAESp128frobust HARAKAAESp192fsimple HARAKAAESp192frobust HARAKAAESp256fsimple HARAKAAESp256frobust"
     [slhdsa-sha2]="SLH-DSA-SHA2-128s SLH-DSA-SHA2-128f SLH-DSA-SHA2-192s SLH-DSA-SHA2-192f SLH-DSA-SHA2-256s SLH-DSA-SHA2-256f"
@@ -137,7 +138,7 @@ STANDARD_FAMILIES=(mlkem mldsa falcon slhdsa hqc2025)
 
 # Non-standardized / separate-category families -- only added to the "all"
 # expansion when --benchmark-all is set (one representative variant each).
-EXTRA_FAMILIES=(cross hawk less faest xmss lms hss ascon-aead ascon-hash slhdsa-sha2 slhdsa-shake slhdsa-haraka slhdsa-haraka-aes fndsa-exp uov mayo qruov snova sdith sqisign mqom mayo-r3 uov-r3 snova-r3 qruov-r3 sdith-r3 sqisign-r3 faest-r3)
+EXTRA_FAMILIES=(cross hawk less faest xmss lms hss ascon-aead ascon-hash slhdsa-sha2 slhdsa-shake slhdsa-haraka slhdsa-haraka-aes fndsa-exp falcon-fxp uov mayo qruov snova sdith sqisign mqom mayo-r3 uov-r3 snova-r3 qruov-r3 sdith-r3 sqisign-r3 faest-r3)
 
 # One representative variant per EXTRA_FAMILIES entry, used by --benchmark-all.
 declare -A REPRESENTATIVE=(
@@ -167,6 +168,7 @@ declare -A REPRESENTATIVE=(
     [slhdsa-sha2]="SLH-DSA-SHA2-128s"
     [slhdsa-shake]="SLH-DSA-SHAKE-128s"
     [fndsa-exp]="fndsa-exp-512"
+    [falcon-fxp]="falcon-fxp-512"
     [slhdsa-haraka]="HARAKAp128fsimple"
     [slhdsa-haraka-aes]="HARAKAAESp128fsimple"
 )
@@ -176,6 +178,7 @@ declare -A REPRESENTATIVE=(
 declare -A FAMILY_FLAGS=(
     [sdith-r3]="-lm"
     [fndsa-exp]="-D_GNU_SOURCE -DFNDSA_AVX2=0 -DFNDSA_SSE2=0 -DFNDSA_NEON=0 -DFNDSA_RV64D=0"
+    [falcon-fxp]="-D_GNU_SOURCE ntrugen/src/*.c"
 )
 
 # Full family list, standardized + extra -- used for --list and for

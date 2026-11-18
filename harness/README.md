@@ -36,7 +36,7 @@ exposes randomness to the harness.
 | `kem_prng_reseed` | `PQCgenKAT_kem_hqc2025.c` / `main_hqc2025.c` | HQC |
 | `ds_derand_ctx` | `PQCgenKAT_sign_mldsa.c` / `main_mldsa.c` | ML-DSA |
 | `ds_derand_rnd` | `PQCgenKAT_sign_slhdsa.c` / `main_slhdsa.c` | SLH-DSA (FIPS 205), legacy Haraka SPHINCS+ |
-| `ds_derand_rnd_nonce` | `PQCgenKAT_sign_falcon.c` / `main_falcon.c` | Falcon, experimental FN-DSA |
+| `ds_derand_rnd_nonce` | `PQCgenKAT_sign_falcon.c` / `main_falcon.c` | Falcon, experimental FN-DSA, experimental fixed-point Falcon |
 | `ds_derand_seed` | `PQCgenKAT_sign_{xmss,lms,hss}.c` / `main_{xmss,lms,hss}.c` | XMSS, LMS, HSS |
 | `ds_drbg_*`, `ds_drbg_official` | `PQCgenKAT_sign_<family>[_r3].c` / `main_<family>[_r3].c` | the on-ramp candidates (CROSS, LESS, HAWK, FAEST, MAYO, UOV, QR-UOV, SNOVA, SDitH, SQIsign, MQOM and their Round-3 ports) |
 | `aead_direct`, `hash_direct` | `PQCgenKAT_{aead,hash}_ascon.c` / `main_ascon_{aead,hash}.c` | ASCON |

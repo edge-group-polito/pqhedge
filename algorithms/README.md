@@ -24,7 +24,7 @@ algorithms/
 | **On-ramp candidates** | submissions to the additional digital signature process, not standards | the families in `signatures/onramp/` | no — `test-onramp-ds` |
 
 Also outside `test-all`: the stateful hash-based signatures (a separate NIST standard, SP 800-208), ASCON, the experimental FN-DSA
-(`FNDSA-EXP`) and everything under `legacy/`.
+(`FNDSA-EXP`), the experimental fixed-point Falcon (`FALCON-FXP`) and everything under `legacy/`.
 
 ## Provenance of every family
 
@@ -38,6 +38,7 @@ when the code was added. Licenses are as recorded in the tree (`LICENSE` files, 
 | ML-DSA | `signatures/standard/ML-DSA` | FIPS 204, final (Aug 2024) | 3 | [mldsa-native](https://github.com/pq-code-package/mldsa-native) | tag `v2.0.0`, `834a90d5…` | Apache-2.0 OR ISC OR MIT | yes |
 | SLH-DSA | `signatures/standard/SLH-DSA` | FIPS 205, final (Aug 2024) | 12 | [slhdsa-c](https://github.com/pq-code-package/slhdsa-c) | commit `174c02e4…` (no tags) | Apache-2.0 OR ISC OR MIT | yes |
 | Falcon | `signatures/standard/FALCON` | round-3 submission; FN-DSA (FIPS 206) not final (NIST: "ongoing standardization"); Falcon and FN-DSA are not wire-compatible | 2 | [falcon-round3.zip](https://falcon-sign.info/falcon-round3.zip) | package SHA-256 `d625407d…` | MIT | yes |
+| Falcon fixed-point (experimental) | `signatures/standard/FALCON-FXP` | fixed-point Falcon prototype, **not** FN-DSA and not wire-compatible with round-3 Falcon | 2 | artifact of the fixed-point Falcon paper (URL / commit not recorded, see its `UPSTREAM.md`) | not recorded | MIT / public domain | no — `test-falcon-fxp` |
 | FN-DSA (experimental) | `signatures/standard/FNDSA-EXP` | best-guess pre-standard implementation, **not** FIPS 206 | 2 | [c-fn-dsa](https://github.com/pornin/c-fn-dsa) | commit `1b858880…` | public domain | no — `test-fndsa-exp` |
 | On-ramp candidates | `signatures/onramp` | NIST additional signatures: 9 candidates in round 3, CROSS and LESS round 2 only | 232 in `test-onramp-ds` (+ FAEST-decoupled 12) | see [`signatures/onramp/README.md`](signatures/onramp/README.md) | per family | per family | no |
 | XMSS | `signatures/stateful/XMSS` | NIST SP 800-208, final (Oct 2020) | 1 default (+76 via `-check`) | [xmss-reference](https://github.com/XMSS/xmss-reference) | closest match: `master` `171ccbd2…` (not a verified import point) | CC0 1.0 | no — `test-stateful-ds` |

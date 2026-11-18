@@ -39,6 +39,7 @@
 #    Standardized (in test-all): test-falcon test-mldsa test-slhdsa
 #      test-mlkem
 #      test-hqc  (aggregates: test-ds, test-kem)
+#    Experimental (NOT in test-all): test-fndsa-exp (pre-standard FN-DSA)  test-falcon-fxp (fixed-point Falcon; FXP_FPR_MODE=0|2)
 #    Additional-DS (NOT in test-all): test-cross test-hawk test-less test-faest test-uov test-mayo test-qruov test-snova test-sdith test-sqisign test-mqom
 #                   Round-3: test-mayo-r3 test-uov-r3 test-snova-r3 test-qruov-r3 test-sdith-r3 test-sqisign-r3 test-faest-r3
 #      (aggregate: test-onramp-ds; per-family gen-<family>-r3 also exist)
@@ -105,6 +106,7 @@ DIRS := $(BUILD) \
         $(RSPDIR)/legacy/SLH-DSA-Haraka \
         $(RSPDIR)/legacy/SLH-DSA-Haraka-AES \
         $(RSPDIR)/signatures/standard/FNDSA-EXP \
+        $(RSPDIR)/signatures/standard/FALCON-FXP \
         $(RSPDIR)/signatures/onramp/round2-only/CROSS \
         $(RSPDIR)/signatures/onramp/FAEST \
         $(RSPDIR)/signatures/onramp/FAEST-decoupled \
@@ -1655,6 +1657,61 @@ gen-fndsa-exp:  $(addprefix gen-,$(FNDSA_EXP_VARIANTS))
 .PHONY: test-fndsa-exp gen-fndsa-exp
 
 # =============================================================================
+#  Falcon fixed-point (FALCON-FXP, 2 variants) -- EXPERIMENTAL, NOT in test-all.
+#  Fixed-point (type 1) Falcon prototype of De Almeida Braga, Fouque, Lachguel
+#  and Prest ("Toward a Secure Fixed-Point Implementation of the Falcon
+#  Signature Scheme"). Shared fixed-point-c/ source tree (+ ntrugen/ fixed-point
+#  key generation) + wrapper/nist_fxp.c (explicit-randomness API) + per-variant
+#  include/api.h. FALCON_FPR_MODE=2 (fixed point) is the default of config.h;
+#  override it with FXP_FPR_MODE=0 (native double). _GNU_SOURCE is needed for
+#  the getentropy/urandom code under -std=c11. Needs __int128 (gcc/clang).
+#  Not wire-compatible with Falcon round 3 (different keygen, see UPSTREAM.md).
+# =============================================================================
+
+FALCON_FXP_VARIANTS := falcon-fxp-512 falcon-fxp-1024
+FXP_DIR      := $(ROOT)/algorithms/signatures/standard/FALCON-FXP
+FXP_FPR_MODE ?= 2
+# -UDEBUG: upstream treats any defined DEBUG (the harness passes -DDEBUG=0) as a debug build and prints
+# rejection statistics on every signature; -UDEBUG also disables the harness' DEBUG=1 hex dumps for this family.
+FXP_FLAGS    := -D_GNU_SOURCE -DFALCON_FPR_MODE=$(FXP_FPR_MODE) -UDEBUG
+FXP_SRCS     := $(wildcard $(FXP_DIR)/fixed-point-c/*.c) $(wildcard $(FXP_DIR)/fixed-point-c/ntrugen/src/*.c) \
+                $(FXP_DIR)/wrapper/nist_fxp.c
+
+define FALCON_FXP_RULES
+$(subst -,_,$(1))_INC := -I$(FXP_DIR)/$(1)/include -I$(FXP_DIR)/fixed-point-c -I$(GENDIR) -I$(COMMON)
+$(subst -,_,$(1))_RSP := $(RSPDIR)/signatures/standard/FALCON-FXP/$(1).rsp
+
+$(BUILD)/gen_$(subst -,_,$(1)): $(FXP_SRCS) $(GENDIR)/rng.c \
+    $(GENDIR)/PQCgenKAT_sign_falcon.c $(COMMON)/kat_parser.c \
+    | $(BUILD) $(RSPDIR)/signatures/standard/FALCON-FXP
+	$(CC) $(CFLAGS) $(FXP_FLAGS) $$($(subst -,_,$(1))_INC) $(GEN_FLAGS) \
+	    -DRSP_PATH='"$$($(subst -,_,$(1))_RSP)"' -DALGO_NAME='"$(1)"' \
+	    $$^ -o $$@ -lm
+
+$$($(subst -,_,$(1))_RSP): $(BUILD)/gen_$(subst -,_,$(1)) | $(RSPDIR)/signatures/standard/FALCON-FXP
+	$$<
+
+$(BUILD)/test_$(subst -,_,$(1)): $(FXP_SRCS) $(GENDIR)/rng.c \
+    $(GENDIR)/main_falcon.c $(COMMON)/kat_parser.c | $(BUILD)
+	$(CC) $(CFLAGS) $$($(subst -,_,$(1))_INC) $(SIGN_TFLAGS) $(FXP_FLAGS) \
+	    -DRSP_PATH='"$$($(subst -,_,$(1))_RSP)"' \
+	    $$^ -o $$@ -lm
+
+gen-$(1): $$($(subst -,_,$(1))_RSP)
+test-$(1): $$($(subst -,_,$(1))_RSP) $(BUILD)/test_$(subst -,_,$(1))
+	@echo "=== Testing $(1) (EXPERIMENTAL, fixed-point Falcon) ==="
+	@KATNUM=$(KATNUM) $(BUILD)/test_$(subst -,_,$(1))
+
+.PHONY: gen-$(1) test-$(1)
+endef
+
+$(foreach v,$(FALCON_FXP_VARIANTS),$(eval $(call FALCON_FXP_RULES,$(v))))
+
+test-falcon-fxp: $(addprefix test-,$(FALCON_FXP_VARIANTS))
+gen-falcon-fxp:  $(addprefix gen-,$(FALCON_FXP_VARIANTS))
+.PHONY: test-falcon-fxp gen-falcon-fxp
+
+# =============================================================================
 #  XMSS / XMSS^MT  (Stateful-DS -- NIST SP 800-208, not part of test-all)
 #  Unlike every other family, pk/sk/sig sizes are runtime-variable (chosen by
 #  parameter-set name, not compile-time constants), and one shared source
@@ -2188,7 +2245,7 @@ STATIC_ALL_VARIANTS := \
     $(LESS_VARIANTS) $(CROSS_VARIANTS) $(FAEST_VARIANTS) $(UOV_VARIANTS) $(MAYO_VARIANTS) $(QRUOV_VARIANTS) $(SNOVA_VARIANTS) $(SDITH_VARIANTS) $(SQISIGN_VARIANTS) $(MQOM_VARIANTS) \
     $(addsuffix -R3,$(MAYO_R3_VARIANTS) $(UOV_R3_VARIANTS) $(SNOVA_R3_VARIANTS) $(QRUOV_R3_VARIANTS) $(SDITH_R3_VARIANTS) $(SQISIGN_R3_VARIANTS) $(FAEST_R3_VARIANTS)) \
     $(SLHDSA_SAFE_NAMES) \
-    $(HARAKA_SAFE_NAMES) $(HARAKA_AES_SAFE_NAMES) $(FNDSA_EXP_VARIANTS) $(HQC_SAFE_NAMES) \
+    $(HARAKA_SAFE_NAMES) $(HARAKA_AES_SAFE_NAMES) $(FNDSA_EXP_VARIANTS) $(FALCON_FXP_VARIANTS) $(HQC_SAFE_NAMES) \
     XMSS-SHA2_10_256 LMS_H10_W8 HSS_L2_H5_W8
 
 $(foreach v,$(STATIC_ALL_VARIANTS),$(eval $(call STATIC_TEST_RULE,$(v))))
@@ -2205,7 +2262,7 @@ static-test-$(1):
 .PHONY: static-test-$(1)
 endef
 
-$(foreach f,mlkem mldsa falcon hawk less cross faest uov mayo qruov snova sdith sqisign mqom mayo-r3 uov-r3 snova-r3 qruov-r3 sdith-r3 sqisign-r3 faest-r3 slhdsa slhdsa-sha2 slhdsa-shake slhdsa-haraka slhdsa-haraka-aes fndsa-exp hqc2025 xmss lms hss ascon-aead ascon-hash,$(eval $(call STATIC_FAMILY_RULE,$(f))))
+$(foreach f,mlkem mldsa falcon hawk less cross faest uov mayo qruov snova sdith sqisign mqom mayo-r3 uov-r3 snova-r3 qruov-r3 sdith-r3 sqisign-r3 faest-r3 slhdsa slhdsa-sha2 slhdsa-shake slhdsa-haraka slhdsa-haraka-aes fndsa-exp falcon-fxp hqc2025 xmss lms hss ascon-aead ascon-hash,$(eval $(call STATIC_FAMILY_RULE,$(f))))
 
 static-test-hqc: static-test-hqc2025
 .PHONY: static-test-hqc

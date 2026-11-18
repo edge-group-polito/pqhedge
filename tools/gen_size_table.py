@@ -28,9 +28,9 @@ REG = ROOT / "tools" / "algo_registry.json"
 # README tables kept up to date by --update-readmes:  <!-- BEGIN sizes:<id> --> ... <!-- END sizes:<id> -->
 # id -> (readme path, list of registry families, level of detail)
 MARKERS = {
-    "root":     ("results/README.md", ["mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp"], "variants"),
+    "root":     ("results/README.md", ["mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp", "falcon-fxp"], "variants"),
     "kem":      ("algorithms/kem/README.md", ["mlkem", "hqc2025"], "variants"),
-    "standard": ("algorithms/signatures/standard/README.md", ["mldsa", "slhdsa", "falcon", "fndsa-exp"], "variants"),
+    "standard": ("algorithms/signatures/standard/README.md", ["mldsa", "slhdsa", "falcon", "fndsa-exp", "falcon-fxp"], "variants"),
     "legacy":   ("algorithms/legacy/README.md", ["slhdsa-haraka", "slhdsa-haraka-aes"], "variants"),
     "stateful": ("algorithms/signatures/stateful/README.md", ["xmss", "lms", "hss"], "variants"),
     "onramp":   ("algorithms/signatures/onramp/README.md", None, "families"),
@@ -50,7 +50,8 @@ def sizes_of(name, v, tmp):
     src.write_text(c_program(kem))
     incs = [v["include_dir"], v["src_dir"]] + list(v.get("extra_dirs", []))
     cmd = ["gcc", "-std=gnu11", "-w"] + ["-I" + str(ROOT / d) for d in incs]
-    cmd += shlex.split(v.get("static_gcc_flags", "")) + [str(src), "-o", str(tmp / "sz"), "-lm"]
+    # only the options matter here: skip source-file globs that a static_gcc_flags entry may carry (falcon-fxp)
+    cmd += [f for f in shlex.split(v.get("static_gcc_flags", "")) if not f.endswith(".c")] + [str(src), "-o", str(tmp / "sz"), "-lm"]
     r = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
     if r.returncode != 0:
         return None, "compile: " + (r.stderr.strip().splitlines() or ["?"])[0][:120]
@@ -132,7 +133,7 @@ def main():
         for mid, (path, fams, mode) in MARKERS.items():
             sel = rows if fams is None else [r for r in rows if r["family"] in fams]
             if fams is None:
-                sel = [r for r in rows if r["family"] not in ("mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp",
+                sel = [r for r in rows if r["family"] not in ("mlkem", "hqc2025", "mldsa", "slhdsa", "falcon", "fndsa-exp", "falcon-fxp",
                                                               "slhdsa-haraka", "slhdsa-haraka-aes", "xmss", "lms", "hss")]
             update(path, mid, md_variants(sel) if mode == "variants" else md_families(sel))
 

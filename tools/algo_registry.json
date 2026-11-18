@@ -305,6 +305,13 @@
         "fndsa-exp-1024"
       ]
     },
+    "falcon-fxp": {
+      "shape": "ds_derand_rnd_nonce",
+      "variants": [
+        "falcon-fxp-512",
+        "falcon-fxp-1024"
+      ]
+    },
     "slhdsa-sha2": {
       "shape": "ds_derand_rnd",
       "variants": [
@@ -4795,6 +4802,40 @@
         "api.h"
       ],
       "static_gcc_flags": "-D_GNU_SOURCE -DFNDSA_AVX2=0 -DFNDSA_SSE2=0 -DFNDSA_NEON=0 -DFNDSA_RV64D=0"
+    },
+    "falcon-fxp-512": {
+      "family": "falcon-fxp",
+      "shape": "ds_derand_rnd_nonce",
+      "src_dir": "algorithms/signatures/standard/FALCON-FXP/fixed-point-c",
+      "include_dir": "algorithms/signatures/standard/FALCON-FXP/falcon-fxp-512/include",
+      "extra_dirs": [
+        "algorithms/signatures/standard/FALCON-FXP/wrapper"
+      ],
+      "copy_subdirs": true,
+      "rsp_path": "vectors/rsp/signatures/standard/FALCON-FXP/falcon-fxp-512.rsp",
+      "gen_target": "gen-falcon-fxp-512",
+      "vec_suffix": "FALCON_FXP_512",
+      "main_headers": [
+        "api.h"
+      ],
+      "static_gcc_flags": "-D_GNU_SOURCE ntrugen/src/*.c"
+    },
+    "falcon-fxp-1024": {
+      "family": "falcon-fxp",
+      "shape": "ds_derand_rnd_nonce",
+      "src_dir": "algorithms/signatures/standard/FALCON-FXP/fixed-point-c",
+      "include_dir": "algorithms/signatures/standard/FALCON-FXP/falcon-fxp-1024/include",
+      "extra_dirs": [
+        "algorithms/signatures/standard/FALCON-FXP/wrapper"
+      ],
+      "copy_subdirs": true,
+      "rsp_path": "vectors/rsp/signatures/standard/FALCON-FXP/falcon-fxp-1024.rsp",
+      "gen_target": "gen-falcon-fxp-1024",
+      "vec_suffix": "FALCON_FXP_1024",
+      "main_headers": [
+        "api.h"
+      ],
+      "static_gcc_flags": "-D_GNU_SOURCE ntrugen/src/*.c"
     }
   },
   "_unsupported_families_todo": []

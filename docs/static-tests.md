@@ -205,6 +205,7 @@ Legacy and experimental (own targets, **not** part of `static-test-all`):
 |---|---|---|---|
 | `slhdsa-haraka` | `ds_derand_rnd` | 6 | pre-standard SPHINCS+ with Haraka, see [`../algorithms/legacy/README.md`](../algorithms/legacy/README.md) |
 | `slhdsa-haraka-aes` | `ds_derand_rnd` | 6 | RISC-V only (`aes64esm`) — `make gen-*` no-ops on other hosts, generator raises a clear error rather than a traceback |
+| `falcon-fxp` | `ds_derand_rnd_nonce` | 2 | experimental fixed-point Falcon, see [`../algorithms/signatures/standard/FALCON-FXP/UPSTREAM.md`](../algorithms/signatures/standard/FALCON-FXP/UPSTREAM.md); the static folder keeps `ntrugen/` as a sub-directory (`copy_subdirs`), so compile with `gcc -O2 -std=c11 -I. *.c -D_GNU_SOURCE ntrugen/src/*.c` |
 | `fndsa-exp` | `ds_derand_rnd_nonce` | 2 | experimental pre-standard FN-DSA (c-fn-dsa), see [`../algorithms/signatures/standard/FNDSA-EXP/UPSTREAM.md`](../algorithms/signatures/standard/FNDSA-EXP/UPSTREAM.md) |
 
 Non-standardized / separate-category (each with its own aggregate target —
